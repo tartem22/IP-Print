@@ -50,11 +50,14 @@ void printIP(T &&ip)
 }
 
 /*!
-Выводит в консоль ip адрес, представленный в виде STL контейнера
-\param[in] ip ip адрес, представленный в виде STL контейнера
+Выводит в консоль ip адрес, представленный в виде STL контейнера list или vector
+\param[in] ip ip адрес, представленный в виде STL контейнера list или vector
 */
-template <typename T, typename A,
-          template <typename, typename> typename Container>
+template <typename T, typename A, template <typename, typename> typename Container,
+            std::enable_if_t<std::is_same<std::remove_reference_t<Container<T, A>>,
+                                        std::vector<T, A>>::value ||
+                             std::is_same<std::remove_reference_t<Container<T, A>>,
+                                        std::list<T, A>>::value, bool> = true>
 void printIP(Container<T, A> container)
 {
     std::string out;
