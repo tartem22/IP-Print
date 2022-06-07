@@ -82,15 +82,6 @@ Include dependency graph for print_ip.h:</div>
 <area shape="rect" title=" " alt="" coords="112,80,184,107"/>
 </map>
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="print__ip_8h__dep__incl.png" border="0" usemap="#aprint__ip_8hdep" alt=""/></div>
-<map name="aprint__ip_8hdep" id="aprint__ip_8hdep">
-<area shape="rect" title="Заголовочный файл с описанием и определнием шаблонных функций вывода ip адреса" alt="" coords="5,5,80,32"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,80,80,107"/>
-</map>
-</div>
 </div>
 <p><a href="print__ip_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -99,21 +90,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a7b047135c523e497ed620d008b0c5f7c"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_integral&lt; std::remove_reference_t&lt; T &gt; &gt;::value, bool &gt;  = true&gt; </td></tr>
 <tr class="memitem:a7b047135c523e497ed620d008b0c5f7c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a7b047135c523e497ed620d008b0c5f7c">printIP</a> (T &amp;&amp;ip)</td></tr>
 <tr class="separator:a7b047135c523e497ed620d008b0c5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8929bfd7b491f4d6e9aec6a7e30ab601"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , template&lt; typename, typename &gt; typename Container&gt; </td></tr>
-<tr class="memitem:a8929bfd7b491f4d6e9aec6a7e30ab601"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a8929bfd7b491f4d6e9aec6a7e30ab601">printIP</a> (Container&lt; T, A &gt; container)</td></tr>
-<tr class="separator:a8929bfd7b491f4d6e9aec6a7e30ab601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef8fd1f9ac8ba8b1536db5b193497a4"><td class="memTemplParams" colspan="2">template&lt;typename T , typename A , template&lt; typename, typename &gt; typename Container, std::enable_if_t&lt; std::is_same&lt; std::remove_reference_t&lt; Container&lt; T, A &gt; &gt;, std::vector&lt; T, A &gt; &gt;::value||std::is_same&lt; std::remove_reference_t&lt; Container&lt; T, A &gt; &gt;, std::list&lt; T, A &gt; &gt;::value, bool &gt;  = true&gt; </td></tr>
+<tr class="memitem:a8ef8fd1f9ac8ba8b1536db5b193497a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a8ef8fd1f9ac8ba8b1536db5b193497a4">printIP</a> (Container&lt; T, A &gt; container)</td></tr>
+<tr class="separator:a8ef8fd1f9ac8ba8b1536db5b193497a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Заголовочный файл с описанием и определнием шаблонных функций вывода ip адреса </p>
 <p >Данный файл содержит в себе описание и определние шаблонных функций вывода ip адреса </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a8929bfd7b491f4d6e9aec6a7e30ab601" name="a8929bfd7b491f4d6e9aec6a7e30ab601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8929bfd7b491f4d6e9aec6a7e30ab601">&#9670;&nbsp;</a></span>printIP() <span class="overload">[1/2]</span></h2>
+<a id="a8ef8fd1f9ac8ba8b1536db5b193497a4" name="a8ef8fd1f9ac8ba8b1536db5b193497a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef8fd1f9ac8ba8b1536db5b193497a4">&#9670;&nbsp;</a></span>printIP() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename A , template&lt; typename, typename &gt; typename Container&gt; </div>
+template&lt;typename T , typename A , template&lt; typename, typename &gt; typename Container, std::enable_if_t&lt; std::is_same&lt; std::remove_reference_t&lt; Container&lt; T, A &gt; &gt;, std::vector&lt; T, A &gt; &gt;::value||std::is_same&lt; std::remove_reference_t&lt; Container&lt; T, A &gt; &gt;, std::list&lt; T, A &gt; &gt;::value, bool &gt;  = true&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void printIP </td>
@@ -124,9 +115,9 @@ template&lt;typename T , typename A , template&lt; typename, typename &gt; typen
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Выводит в консоль ip адрес, представленный в виде STL контейнера </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Выводит в консоль ip адрес, представленный в виде STL контейнера list или vector </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>ip адрес, представленный в виде STL контейнера </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>ip адрес, представленный в виде STL контейнера list или vector </td></tr>
   </table>
   </dd>
 </dl>
